@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
   
 </head>
-<body style ="background-color: black; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">
-    <h1 class="text-center text-white" style ="text-transform: uppercase; font-size: 40px">Currency Converter</h1>
-        <div class="container d-block justify-content-center align-items-center" style="border:3px solid black; height:100%; background: silver; color: white; border-radius: 30px;">
+<body style ="background-color: white; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">
+    <h1 class="text-center text-secondary" style ="text-transform: uppercase; font-size: 40px">Currency Converter</h1>
+        <div class="container d-block justify-content-center align-items-center" style="border:3px solid black; height:100%; background: silver; color: black; border-radius: 30px;">
             <form>
                     <div class="row" style="justify-content: space-around; align-items: center;">
                     <div class="form-group col-3">
@@ -55,8 +55,30 @@
                 </div>
             </form>
             </div>
+        <br>
+        <br>
+        <br>
+        <h1 class="text-center text-secondary" style ="text-transform: uppercase; font-size: 40px">Coin Change Problem</h1>
+        <div class="container d-block justify-content-center align-items-center" style="border:3px solid black; height:100%; background: silver; color: black; border-radius: 30px;">
+            <form>
+            <div class="row" style="justify-content: space-around; align-items: center;">
+                <div class="form-group col-3">
+                    <label for="coinAmount">Put your Coins here</label>
+                    <input id="coinAmount" type="number" class="form-control">
+                </div>
+                <div class="form-group col-3">
+                        <label for="coinChangeButton">Change it!</label>
+                        <button id="coinChangeButton" onclick="changeCoin()" class="form-control btn-danger" type="button">Change</i></button>
+                </div>
+                <div class="form-group col-12">
+                    <p class="text-center" id="coinResult"></p>
+                </div>
+            </form>
+            
+            
+            
+            </div>
         </div>
-
 
 
 
