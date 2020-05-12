@@ -10,15 +10,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
   
 </head>
-<body style ="background-color: lightblue; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">
-    <h1 class="text-center text-danger" style ="text-transform: uppercase; font-size: 40px">Currency Converter</h1>
-        <div class="text-center" style="margin: 3%;">
-        <p>You can convert USD, GBP and VND here</p>  
-        <button onclick="convertCurrency()">Convert!</button>
+<body style ="background-color: black; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">
+    <h1 class="text-center text-white" style ="text-transform: uppercase; font-size: 40px">Currency Converter</h1>
+        <div class="container d-block justify-content-center align-items-center" style="border:3px solid black; height:100%; background: silver; color: white; border-radius: 30px;">
+            <form>
+                    <div class="row" style="justify-content: space-around; align-items: center;">
+                    <div class="form-group col-3">
+                    <label for="amount">Amount</label>
+                    <input id="amount" type="number" class="form-control">
+                    </div>
+                    <div class="form-group col-2">
+                        <label for="fromCurrency">From</label>
+                        <select id="fromCurrency" type="text" class="form-control">
+                            <option value="usd" selected>USD</option>
+                            <option value="vnd">VND</option>
+                            <option value="gbp">GBP</option>
+                            <option value="inr">INR</option>
+                            <option value="jpy">JPY</option>
+                            <option value="dkr">DKR</option>
+                        </select>    
+                    </div>
+                    <div class="form-group col-1">
+                        <label for="SwapButton">Swap</label>
+                        <p><button id="SwapButton" onclick="swapCurrency()"" type="button" ><i class="fas fa-sync-alt fa-4X"></i></button></p>
+                    </div>
+                    <div class="form-group col-2">
+                        <label for="toCurrency">To</label>
+                        <select id="toCurrency" type="text" class="form-control">
+                            <option value="usd">USD</option>
+                            <option value="vnd" selected>VND</option>
+                            <option value="gbp">GBP</option>
+                            <option value="inr">INR</option>
+                            <option value="jpy">JPY</option>
+                            <option value="dkr">DKR</option>
+                        </select>    
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="convertButton">Convert!</label>
+                        <button id="convertButton" onclick="convertCurrency()" class="form-control" type="button">Get it</i></button>
+                    </div>
+                    <div class="form-group col-12">
+                        <p class="text-center" id="result"></p>
+                    </div>
+                </div>
+            </form>
+            </div>
         </div>
 
-        <p class="text-center" id="result"></p>
-        </div>
+
+
 
 
 
