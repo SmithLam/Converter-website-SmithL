@@ -34,7 +34,7 @@ function convertCurrency() {
     let amountValue = amount.value;
     let inputValue = document.getElementById("fromCurrency").value;
     let outputValue = document.getElementById("toCurrency").value;
-    let convertedAmount = (amountValue * (ExchangeRate[outputValue] / ExchangeRate[inputValue])).toFixed(2)
+    let convertedAmount = amountValue * (ExchangeRate[outputValue] / ExchangeRate[inputValue])
     let formatedInputAmount = formatCurrency(inputValue, amountValue)
     let formatedOutputAmount = formatCurrency(outputValue, convertedAmount)
     result.innerHTML = `Your ${formatedInputAmount} is ${formatedOutputAmount}`
@@ -69,7 +69,7 @@ const changeInVnd ={
 //2. Coin change function
 function changeCoin(){
 let coinAmountValue = coinAmount.value
-    for (i = 1000000; i < changeInVnd.length; i++) {
+    for (i = 0; i < changeInVnd.length; i++) {
     let changeResult = changeInVnd[i];
     coinResult.innerHTML = `Your result is ${changeResult}`
   }
