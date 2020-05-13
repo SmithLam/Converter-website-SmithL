@@ -55,22 +55,38 @@ function swapCurrency() {
 let coinAmount = document.getElementById("coinAmount")
 let coinChangeButton = document.getElementById("coinChangeButton")
 let coinResult = document.getElementById("coinResult")
-const changeInVnd ={
-"500K":500000,
-"200K":200000,
-"100K":100000,
-"50K":50000,
-"20K":20000,
-"10K":10000,
-"5K":5000,
-"2K":2000,
-"1K":1000,
-}
-//2. Coin change function
-function changeCoin(){
-let coinAmountValue = coinAmount.value
-    for (i = 0; i < changeInVnd.length; i++) {
-    let changeResult = changeInVnd[i];
-    coinResult.innerHTML = `Your result is ${changeResult}`
-  }
+let history =[]
+let i = history.length
+//2. Check input function
+
+function checkInputValue(x){
+    if (i>=0 && Number(x)<=999){
+        alert("You must input a bigger number than a Thousand VND!")
+        document.getElementById("coinAmount").value=null
+       return true
+    }
+    else {
+       return false;
+    }
+   }
+
+
+
+//3. Coin change function
+function changeCoin() {
+    let coinAmountValue = coinAmount.value; 
+    let text = "";
+    if (checkInputValue(coinAmountValue)){
+        return 0
+    }
+    let coins = [500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000];
+    let res = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    for (i = 0; i < coins.length; i++) {
+        while (coinAmountValue>=coins[i]) {
+            res[i] += 1;
+            coinAmountValue = coinAmountValue - coins[i];
+        }
+        text += res[i] + "x " + coins[i] + "<br>";
+    }
+    coinResult.innerHTML = `${text}`;
 }
